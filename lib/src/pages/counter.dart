@@ -31,9 +31,7 @@ class _CounterState extends State<Counter> {
         // Decrement Button
         FloatingActionButton(
           onPressed: () {
-            setState(() {
-              _counter--;
-            });
+            _operations('Remove');
           },
           child: Icon(Icons.arrow_back),
           backgroundColor: _mainColor,
@@ -43,9 +41,7 @@ class _CounterState extends State<Counter> {
         // Reset Counter Button
         FloatingActionButton(
           onPressed: () {
-            setState(() {
-              _counter = 0;
-            });
+            _operations('Reset');
           },
           child: Icon(Icons.restore),
           backgroundColor: _mainColor,
@@ -55,9 +51,7 @@ class _CounterState extends State<Counter> {
         // Increment Button
         FloatingActionButton(
           onPressed: () {
-            setState(() {
-              _counter++;
-            });
+            _operations('Increment');
           },
           child: Icon(Icons.arrow_forward),
           backgroundColor: _mainColor,
@@ -77,5 +71,25 @@ class _CounterState extends State<Counter> {
         mainAxisAlignment: MainAxisAlignment.center,
       ),
     );
+  }
+
+  void _operations(String key) {
+    switch (key) {
+      case 'Increment':
+        setState(() {
+          _counter++;
+        });
+        break;
+      case 'Remove':
+        setState(() {
+          _counter--;
+        });
+        break;
+      case 'Reset':
+        setState(() {
+          _counter = 0;
+        });
+        break;
+    }
   }
 }
