@@ -26,14 +26,41 @@ class _CounterState extends State<Counter> {
           mainAxisAlignment: MainAxisAlignment.center,
         ),
       ),
-      floatingActionButton: FloatingActionButton(
-        onPressed: () {
-          setState(() {
-            _counter++;
-          });
-        },
-        child: Icon(Icons.plus_one),
-      ),
+      floatingActionButton: _createButtons(),
+    );
+  }
+
+  Widget _createButtons() {
+    return Row(
+      children: [
+        // Increment Button
+        FloatingActionButton(
+          onPressed: () {
+            setState(() {
+              _counter++;
+            });
+          },
+          child: Icon(Icons.plus_one),
+        ),
+        // Decrement Button
+        FloatingActionButton(
+          onPressed: () {
+            setState(() {
+              _counter--;
+            });
+          },
+          child: Icon(Icons.plus_one),
+        ),
+        // Reset Counter Button
+        FloatingActionButton(
+          onPressed: () {
+            setState(() {
+              _counter = 0;
+            });
+          },
+          child: Icon(Icons.plus_one),
+        ),
+      ],
     );
   }
 }
