@@ -26,6 +26,8 @@ class _CounterState extends State<Counter> {
   Widget _createButtons() {
     return Row(
       children: [
+        // Separation
+        SizedBox(width: 32.0),
         // Decrement Button
         FloatingActionButton(
           onPressed: () {
@@ -37,7 +39,7 @@ class _CounterState extends State<Counter> {
           backgroundColor: _mainColor,
         ),
         // Separation
-        SizedBox(width: 8.0),
+        Expanded(child: SizedBox()),
         // Reset Counter Button
         FloatingActionButton(
           onPressed: () {
@@ -49,7 +51,7 @@ class _CounterState extends State<Counter> {
           backgroundColor: _mainColor,
         ),
         // Separation
-        SizedBox(width: 8.0),
+        Expanded(child: SizedBox()),
         // Increment Button
         FloatingActionButton(
           onPressed: () {
