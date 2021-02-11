@@ -6,11 +6,17 @@ class HomePage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
         appBar: AppBar(
-          title: Center(child: Text("Super Tap Counter")),
+          title: Text("Super Tap Counter"),
+          centerTitle: true,
           backgroundColor: Color.fromARGB(255, 235, 27, 35),
         ),
         body: Center(
-          child: Text("Taps:"),
+          child: Column(
+            children: [
+              Text("Number of taps:"),
+            ],
+            mainAxisAlignment: MainAxisAlignment.center,
+          ),
         ));
   }
 }
