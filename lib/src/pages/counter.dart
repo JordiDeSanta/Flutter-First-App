@@ -33,15 +33,6 @@ class _CounterState extends State<Counter> {
   Widget _createButtons() {
     return Row(
       children: [
-        // Increment Button
-        FloatingActionButton(
-          onPressed: () {
-            setState(() {
-              _counter++;
-            });
-          },
-          child: Icon(Icons.plus_one),
-        ),
         // Decrement Button
         FloatingActionButton(
           onPressed: () {
@@ -49,8 +40,10 @@ class _CounterState extends State<Counter> {
               _counter--;
             });
           },
-          child: Icon(Icons.plus_one),
+          child: Icon(Icons.arrow_back),
         ),
+        // Separation
+        SizedBox(width: 8.0),
         // Reset Counter Button
         FloatingActionButton(
           onPressed: () {
@@ -58,9 +51,21 @@ class _CounterState extends State<Counter> {
               _counter = 0;
             });
           },
-          child: Icon(Icons.plus_one),
+          child: Icon(Icons.restore),
+        ),
+        // Separation
+        SizedBox(width: 8.0),
+        // Increment Button
+        FloatingActionButton(
+          onPressed: () {
+            setState(() {
+              _counter++;
+            });
+          },
+          child: Icon(Icons.arrow_forward),
         ),
       ],
+      mainAxisAlignment: MainAxisAlignment.end,
     );
   }
 }
