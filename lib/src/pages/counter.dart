@@ -7,6 +7,7 @@ class Counter extends StatefulWidget {
 
 class _CounterState extends State<Counter> {
   final _fontStyle = new TextStyle(fontSize: 32);
+  Color _mainColor = Color.fromARGB(255, 235, 27, 35);
   int _counter = 0;
 
   @override
@@ -15,7 +16,7 @@ class _CounterState extends State<Counter> {
       appBar: AppBar(
         title: Text('Super Tap Counter'),
         centerTitle: true,
-        backgroundColor: Color.fromARGB(255, 235, 27, 35),
+        backgroundColor: _mainColor,
       ),
       body: _printTaps(),
       floatingActionButton: _createButtons(),
@@ -33,6 +34,7 @@ class _CounterState extends State<Counter> {
             });
           },
           child: Icon(Icons.arrow_back),
+          backgroundColor: _mainColor,
         ),
         // Separation
         SizedBox(width: 8.0),
@@ -44,6 +46,7 @@ class _CounterState extends State<Counter> {
             });
           },
           child: Icon(Icons.restore),
+          backgroundColor: _mainColor,
         ),
         // Separation
         SizedBox(width: 8.0),
@@ -55,6 +58,7 @@ class _CounterState extends State<Counter> {
             });
           },
           child: Icon(Icons.arrow_forward),
+          backgroundColor: _mainColor,
         ),
       ],
       mainAxisAlignment: MainAxisAlignment.end,
