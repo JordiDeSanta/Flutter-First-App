@@ -17,15 +17,7 @@ class _CounterState extends State<Counter> {
         centerTitle: true,
         backgroundColor: Color.fromARGB(255, 235, 27, 35),
       ),
-      body: Center(
-        child: Column(
-          children: [
-            Text('Number of taps:', style: _fontStyle),
-            Text('$_counter', style: _fontStyle),
-          ],
-          mainAxisAlignment: MainAxisAlignment.center,
-        ),
-      ),
+      body: _printTaps(),
       floatingActionButton: _createButtons(),
     );
   }
@@ -66,6 +58,18 @@ class _CounterState extends State<Counter> {
         ),
       ],
       mainAxisAlignment: MainAxisAlignment.end,
+    );
+  }
+
+  Widget _printTaps() {
+    return Center(
+      child: Column(
+        children: [
+          Text('Number of taps:', style: _fontStyle),
+          Text('$_counter', style: _fontStyle),
+        ],
+        mainAxisAlignment: MainAxisAlignment.center,
+      ),
     );
   }
 }
